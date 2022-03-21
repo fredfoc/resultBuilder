@@ -56,6 +56,15 @@ struct ComplexShape {
 
 ```
 
+Note :
+
+```swift
+static func buildBlock(_ components: Drawable...) -> [Drawable] {
+    ...
+}
+```
+From Swift By Sundell : "Above we’re using a variadic argument list, which SwiftUI can’t currently use, since its View protocol contains an associated type. Instead, SwiftUI’s ViewBuilder defines 10 different overloads of buildBlock, each with a different number of arguments — **which is why a SwiftUI view can’t have more than 10 children***. However, that limitation does not apply to our drawableBuilder."
+
 ## License
 MIT
 **Free Software, Hell Yeah!**

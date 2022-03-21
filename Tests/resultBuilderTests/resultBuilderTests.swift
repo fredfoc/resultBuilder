@@ -1,5 +1,5 @@
-import XCTest
 @testable import resultBuilder
+import XCTest
 
 final class resultBuilderTests: XCTestCase {
     func testGenerateSimpleRect() throws {
@@ -13,7 +13,7 @@ final class resultBuilderTests: XCTestCase {
         try data?.write(to: url)
         // Assert
     }
-    
+
     func testGenerateComplexShape() throws {
         // Arrange
         let url = URL(fileURLWithPath: #file)

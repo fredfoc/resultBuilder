@@ -18,3 +18,9 @@ extension Rect: Drawable {
         context.fill(rect)
     }
 }
+
+extension Rect: DrawableConvertible {
+    var elements: [Drawable] {
+        [self]
+    }
+}
