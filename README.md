@@ -45,7 +45,7 @@ At **1** we can see that this way of writing can become very painfull.
 
 ```swift
 struct ComplexShape {
-    @DrawableBuilder private var drawables: [Drawable] {
+    @drawableBuilder private var drawables: [Drawable] {
         Rect...
         Rect...
         if hasBlueRect {

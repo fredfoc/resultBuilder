@@ -13,14 +13,9 @@ struct ComplexShape {
     }
     
     private let hasYellowRect: Bool
-    private var drawables: [Drawable] {
-        var array = [Drawable]()
-        array.append(Rect(rect: CGRect(x: 10, y: 10, width: 90, height: 50), color: .red))
-        array.append(Rect(rect: CGRect(x: 110, y: 10, width: 90, height: 50), color: .blue))
-        if hasYellowRect {
-            array.append(Rect(rect: CGRect(x: 10, y: 70, width: 90, height: 50), color: .yellow))
-        }
-        return array
+    @drawableBuilder private var drawables: [Drawable] {
+        Rect(rect: CGRect(x: 10, y: 10, width: 90, height: 50), color: .red)
+        Rect(rect: CGRect(x: 110, y: 10, width: 90, height: 50), color: .blue)
     }
 }
 
