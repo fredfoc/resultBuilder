@@ -2,7 +2,7 @@ import XCTest
 @testable import resultBuilder
 
 final class resultBuilderTests: XCTestCase {
-    func testGenerateImage() throws {
+    func testGenerateSimpleRect() throws {
         // Arrange
         let url = URL(fileURLWithPath: #file)
             .deletingLastPathComponent()
@@ -10,6 +10,18 @@ final class resultBuilderTests: XCTestCase {
         let rect = Rect(rect: CGRect(x: 10, y: 10, width: 90, height: 50), color: .red)
         // Act
         let data = Factory.jpeg(from: rect)
+        try data?.write(to: url)
+        // Assert
+    }
+    
+    func testGenerateComplexShape() throws {
+        // Arrange
+        let url = URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .appendingPathComponent("Resources/test1.jpeg")
+        let complexShape = ComplexShape()
+        // Act
+        let data = Factory.jpeg(from: complexShape)
         try data?.write(to: url)
         // Assert
     }
