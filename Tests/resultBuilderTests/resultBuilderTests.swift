@@ -37,4 +37,19 @@ final class resultBuilderTests: XCTestCase {
         try data?.write(to: url)
         // Assert
     }
+
+    func testGenerateJoliShape() throws {
+        // Arrange
+        let url = URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .appendingPathComponent("Resources/test3.jpeg")
+        let shape = JoliShape {
+            Rect(rect: CGRect(x: 10, y: 10, width: 90, height: 50), color: .red)
+            Rect(rect: CGRect(x: 110, y: 10, width: 90, height: 50), color: .blue)
+        }
+        // Act
+        let data = Factory.jpeg(from: shape)
+        try data?.write(to: url)
+        // Assert
+    }
 }
