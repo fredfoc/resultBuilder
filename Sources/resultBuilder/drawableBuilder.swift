@@ -8,12 +8,16 @@
 import Foundation
 
 @resultBuilder enum drawableBuilder {
-    static func buildIf(_ component: DrawableConvertible?) -> [Drawable] {
-        component?.elements ?? []
-    }
-
     static func buildBlock(_ components: DrawableConvertible...) -> [Drawable] {
         components.flatMap { $0.elements }
+    }
+
+    static func buildEither(first component: DrawableConvertible) -> [Drawable] {
+        component.elements
+    }
+
+    static func buildEither(second component: DrawableConvertible) -> [Drawable] {
+        component.elements
     }
 }
 

@@ -25,4 +25,16 @@ final class resultBuilderTests: XCTestCase {
         try data?.write(to: url)
         // Assert
     }
+
+    func testGenerateComplexShapeNoYellowRect() throws {
+        // Arrange
+        let url = URL(fileURLWithPath: #file)
+            .deletingLastPathComponent()
+            .appendingPathComponent("Resources/test2.jpeg")
+        let complexShape = ComplexShape(hasYellowRect: false)
+        // Act
+        let data = Factory.jpeg(from: complexShape)
+        try data?.write(to: url)
+        // Assert
+    }
 }

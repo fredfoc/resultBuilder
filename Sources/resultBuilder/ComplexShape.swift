@@ -18,6 +18,8 @@ struct ComplexShape {
         Rect(rect: CGRect(x: 110, y: 10, width: 90, height: 50), color: .blue)
         if hasYellowRect {
             Rect(rect: CGRect(x: 10, y: 70, width: 90, height: 50), color: .yellow)
+        } else {
+            Rect(rect: CGRect(x: 10, y: 70, width: 90, height: 50), color: .orange)
         }
     }
 }
